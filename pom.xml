@@ -75,7 +75,7 @@
                 <configuration>
                     <sqlMigrationSeparator>__</sqlMigrationSeparator>
                     <locations>
-                        <location>filesystem:src/main/resources/db/migrations</location>
+                        <location>filesystem:src/main/resources/db/migration</location>
                     </locations>
                     <url>${database.url}</url>
                 </configuration>

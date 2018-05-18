@@ -19,12 +19,12 @@ public class WebController{
         return "Greetings from Spring Boot!";
     }
 
-    @GetMapping("/foods")
+    @GetMapping("/api/v1/foods")
     public List<Food> retrieveAllStudents() {
         return foodRepository.findAll();
     }
 
-    @GetMapping("/foods/{id}")
+    @GetMapping("/api/v1/foods/{id}")
     public Food retrieveStudent(@PathVariable long id) {
         Optional<Food> food = foodRepository.findById(id);
 
@@ -34,7 +34,7 @@ public class WebController{
         return food.get();
     }
 
-    @PostMapping("/foods")
+    @PostMapping("/api/v1/foods")
     public ResponseEntity<Object> createFood(@RequestBody Food food) {
         Food savedFood = foodRepository.save(food);
 
@@ -44,7 +44,7 @@ public class WebController{
         return ResponseEntity.created(location).build();
     }
 
-    @PatchMapping("/foods/{id}")
+    @PatchMapping("/api/v1/foods/{id}")
     public ResponseEntity<Object> patchFood(@RequestBody Food food, @PathVariable long id) {
 
 //        Optional<Food> foodOptional = foodRepository.findById(id);
@@ -60,7 +60,7 @@ public class WebController{
     }
 
 
-    @DeleteMapping("/foods/{id}")
+    @DeleteMapping("/api/v1/foods/{id}")
     public void deleteFood(@PathVariable long id) {
         foodRepository.deleteById(id);
     }

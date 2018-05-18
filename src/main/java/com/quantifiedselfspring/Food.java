@@ -15,13 +15,13 @@ public class Food implements Serializable {
     private String name;
 
 //    @Column(name = "calories")
-    private String calories;
+    private Integer calories;
 
     public Food() {
         super();
     }
 
-    public Food(Long id, String name, String calories) {
+    public Food(Long id, String name, Integer calories) {
         super();
         this.id = id;
         this.name = name;
@@ -41,10 +41,10 @@ public class Food implements Serializable {
         this.name = name;
     }
 
-    public String getCalories() {
+    public Integer getCalories() {
         return calories;
     }
-    public void setCalories(String calories) {
+    public void setCalories(Integer calories) {
         this.calories = calories;
     }
 

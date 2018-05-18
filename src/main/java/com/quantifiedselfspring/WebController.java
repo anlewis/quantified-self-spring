@@ -43,6 +43,27 @@ public class WebController{
 
         return ResponseEntity.created(location).build();
     }
+
+    @PatchMapping("/students/{id}")
+    public ResponseEntity<Object> patchFood(@RequestBody Food food, @PathVariable long id) {
+
+//        Optional<Food> foodOptional = foodRepository.findById(id);
+//
+//        if (!foodOptional.isPresent())
+//            return ResponseEntity.notFound().build();
+
+        food.setId(id);
+
+        foodRepository.save(food);
+
+        return ResponseEntity.noContent().build();
+    }
+
+
+    @DeleteMapping("/foods/{id}")
+    public void deleteFood(@PathVariable long id) {
+        foodRepository.deleteById(id);
+    }
 }
 
 

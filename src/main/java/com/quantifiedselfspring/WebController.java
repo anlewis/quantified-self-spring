@@ -44,7 +44,7 @@ public class WebController{
         return ResponseEntity.created(location).build();
     }
 
-    @PatchMapping("/students/{id}")
+    @PatchMapping("/foods/{id}")
     public ResponseEntity<Object> patchFood(@RequestBody Food food, @PathVariable long id) {
 
 //        Optional<Food> foodOptional = foodRepository.findById(id);
